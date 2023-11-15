@@ -46,7 +46,7 @@ def test(dataset):
     res = linearregression(x,y)
     return (res)
 
-def timer(function, testset, n = 10):
+def timer(function, testset, n = 500):
     #returns average function execution time for n runs
 
     start = time.process_time()

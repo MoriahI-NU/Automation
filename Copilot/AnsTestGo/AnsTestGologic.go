@@ -56,7 +56,6 @@ func sum(numbers []float64) float64 {
 
 func GoTest(set string, nRuns int) Response {
 
-	start := time.Now()
 	var responseGo Response
 
 	var times []float64
@@ -81,6 +80,7 @@ func GoTest(set string, nRuns int) Response {
 	}
 
 	for i := 0; i < nRuns; i++ {
+		start := time.Now()
 		dataX := [][]float64{anscombe[set]["x"]}
 		dataY := [][]float64{anscombe[set]["y"]}
 
@@ -89,7 +89,7 @@ func GoTest(set string, nRuns int) Response {
 		responseGo.Coefficient = []float64{avgIntercept, avgSlope}
 		times = append(times, time.Since(start).Seconds())
 	}
-	responseGo.Time = sum(times) / float64(len(times))
+	responseGo.Time = sum(times) / float64(500)
 	fmt.Printf("%.7f\n", responseGo.Time)
 
 	return responseGo

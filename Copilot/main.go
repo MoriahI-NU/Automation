@@ -34,7 +34,6 @@ func ExperimentR(set string) Results {
 }
 
 func ExperimentGo(set string) Copilot.Response {
-
 	response := Copilot.GoTest(set, 500)
 	return response
 }
