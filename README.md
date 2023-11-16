@@ -28,10 +28,10 @@ The conversation I held with this program can be found in ChatGPT.md. Personally
 URL: https://pkg.go.dev/std  
   
 I used the standard library to create all unit tests in main_test.go. You can access this feature simply by right-clicking on the function you want to test from main.go and choosing the option "Go: Generate Unit Tests for Function" as seen below.
-![GenerateUnitTests](std.JPG)
+!(std.JPG)
 
 Here is a picture of the unit test that was generated. The part circled in red was the only part I had to manually add for this specific function test.
-![AutomatedVManual](manual.JPG)
+!(manual.JPG)
 
 I thought that this option was fast and easy. It provides a sort of cookie cutter unit test with areas for you to fill in the specifics. This would definitely save time in typing the redundant parts of unit tests.
 
