@@ -1,16 +1,17 @@
 package Copilot
 
 import (
-	"fmt"
+	//"fmt"
 	"math/rand"
+	"strconv"
 	"time"
 )
 
 var nRuns = 500
 
 type Response struct {
-	Coefficient []float64 `json:"coefficients"`
-	Time        float64   `json:"time"`
+	Coefficient []string `json:"coefficients"`
+	Time        string   `json:"time"`
 }
 
 func linearRegression(x, y []float64) (float64, float64) {
@@ -86,11 +87,19 @@ func GoTest(set string, nRuns int) Response {
 
 		avgIntercept, avgSlope := runLinearRegression(dataX, dataY)
 
-		responseGo.Coefficient = []float64{avgIntercept, avgSlope}
+		// Convert float64 coefficients to string
+		responseGo.Coefficient = []string{
+			strconv.FormatFloat(avgIntercept, 'f', -1, 64),
+			strconv.FormatFloat(avgSlope, 'f', -1, 64),
+		}
+
+		// Convert float64 time to string
 		times = append(times, time.Since(start).Seconds())
 	}
-	responseGo.Time = sum(times) / float64(500)
-	fmt.Printf("%.7f\n", responseGo.Time)
+
+	responseGo.Time = strconv.FormatFloat(sum(times)/float64(500), 'f', -1, 64)
+
+	//fmt.Printf("%s\n", responseGo.Time)
 
 	return responseGo
 }

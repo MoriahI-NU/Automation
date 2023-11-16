@@ -1,7 +1,6 @@
 package main
 
 import (
-	Copilot "Copilot/AnsTestGo"
 	"reflect"
 	"testing"
 )
@@ -19,7 +18,7 @@ func TestExperimentPython(t *testing.T) {
 			set:  "One",
 			//rounding wants because time may vary with external factors - test will fail because of this
 			//but for this experiment, it is doable to check the got and want values manually
-			want: Results{Output: "{\"Coefficients\": [3, 0.5], \"Time\": 0.0002", Error: nil},
+			want: Results{Coefficients: "[3, 0.5]", Time: "0.0002"},
 		},
 	}
 	for _, tt := range tests {
@@ -43,7 +42,7 @@ func TestExperimentR(t *testing.T) {
 			name: "Test Case R",
 			set:  "One",
 			//rounding due to variability - check the got and want values manually
-			want: Results{Output: "{\"Coefficients\": [3, 0.5], \"Time\": 0.0006}", Error: nil},
+			want: Results{Coefficients: "[3, 0.5]", Time: "0.0006"},
 		},
 	}
 	for _, tt := range tests {
@@ -60,7 +59,7 @@ func TestExperimentGo(t *testing.T) {
 	tests := []struct {
 		name string
 		set  string
-		want Copilot.Response
+		want Results
 	}{
 		{
 			//only testing Anscombe set One
@@ -70,7 +69,7 @@ func TestExperimentGo(t *testing.T) {
 
 			//ExperimentGo uses different code than that in LinearRegressionComp repo, so the timing will be different.
 			//However, it should still run the fastest out of all 3 languages, which is why I've set Time: 0.0001
-			want: Copilot.Response{Coefficient: []float64{3, 0.5}, Time: 0.0001},
+			want: Results{Coefficients: "[3, 0.5]", Time: "0.0001"},
 		},
 	}
 	for _, tt := range tests {
