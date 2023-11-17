@@ -26,7 +26,7 @@ URL: https://chat.openai.com
 
 I tried to use ChatGPT mainly for calculating the average runtimes for each language across all Anscombe sets, as well as for creating tables comparing the ratios of average runtimes. 
   
-The conversation I held with this program can be found in ChatGPT.md. Personally I feel like ChatGPT understood my prompts better and had a shallower learning curve. However, it did have more issues with understanding the interconnectedness of my files at times. I had to consistently copy and paste parts of my code (from various sources) to give it a fuller picture of how everything worked together.
+The conversation I held with this program can be found in ChatGPT.md. Personally I feel like ChatGPT understood my prompts better and had a shallower learning curve. I was plesantly surprised when I asked simple, open-ended prompts like "combine/delete parts of a string". It would respond with three to four various ways I could achieve this, with the option to chosse whichever one best fits my project's needs. However, it did have more issues with understanding the interconnectedness of my files at times. I had to consistently copy and paste parts of my code (from various sources) to give it a fuller picture of how everything worked together.
 
 ## Automation Method 3: Standard Library
 URL: https://pkg.go.dev/std  
