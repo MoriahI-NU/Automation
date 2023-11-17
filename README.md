@@ -1,8 +1,12 @@
 # Linear Regression Comparison with Automation
 
 ## The Problem
+Return to an earlier project: Linear Regression Comparison and explore the possibilities of automated code generation using Github Copilot, the Go standard library, and ChatGPT.
 
-## The Original
+I decided to see if I could take the same data from the original project, and meet the end goal requirements by using these automation methods. I wanted to essentially restart the project and see where the prompts would take me - start from ground zero and follow however the automation wanted to structure the solution, with as little manual fixes as possible. Can these programs/libraries hold up on their own? Can they ease the workload of devs enough to justify downsizing?
+
+## The Original Project
+https://github.com/MoriahI-NU/LinearRegressionComp  
 
 ## Automation Method 1: Github Copilot
 URL: https://github.com/features/copilot  
@@ -37,10 +41,10 @@ I thought that this option was fast and easy. It provides a sort of cookie cutte
 
 ## Results
 
-The results from main.go are found in results.md. The coefficients and runtimes match those from the original repo (within rounding error) - with the exeption of Go's runtimes. This is because although the .py and .R files are exactly the same (provided by NU SPS), I used Copilot to carry out the linear regression performed with Go. It chose a different method and structure than that used in the original Linear Regression Comparison.
+The results from the .exe file are found in results.md. The coefficients and runtimes match those from the original repo (within rounding error) - with the exeption of Go's runtimes. This is because although the .py and .R files are exactly the same (provided by NU SPS), I used Copilot to carry out the linear regression performed with Go. It chose a different method and structure than that used in the original Linear Regression Comparison.
 
 The output from main_test.go is found in main_test_results.md. Although it says that everything FAILED, this is because I took some liberty with the "want" values. I knew that the runtimes would vary (very minutely) based on factors that I can't control, so I just put in a rough rounded number for everything - both the coefficients and the runtime. This project is small enough that I can manually check the main_test outputs to make sure that the outputs are NEAR ENOUGH to my want values.
 
 
 ## Insight and Recommendations 
-I found that these methods of automation are indeed helpful and surprisingly intelligent. However, if used as the main method for a project like this they can create a solution that seems clunky and at times disorganized. As stated previously I tried to let Copilot/ChatGPT "take the lead" and follow most of its suggestions while doing as little manual input/fixes as possible. Even when tailoring my prompts time after time to get the most efficient and streamlined responses, I feel like the end product could still have been coded much more concisely. For specific blocks of code they are definitely helpful, but they don't always understand the entire picture of how files are interacting and what the end goal is. I think this is why I feel that this iteration is a bit disjointed compared to the original Linear Regression Comparison Repo. Perhaps I have not quite gotten the hang of wording my prompts correctly, but that goes to show how A. there IS a learning curve and B. automative processes as they are cannot replace people, they can only help make their jobs easier.
+I found that these methods of automation are indeed helpful and surprisingly intelligent. However, if used as the main method for a project like this they can create a solution that seems clunky and at times disorganized. As stated previously I tried to let Copilot/ChatGPT "take the lead" and follow most of its suggestions while doing as little manual input/fixes as possible. Even when tailoring my prompts time after time to get the most efficient and streamlined responses, I feel like the end product could still have been coded much more concisely. For specific blocks of code they are definitely helpful, but they don't always understand the entire picture of how files are interacting and what the end goal is. I think this is why I feel that this iteration is a bit disjointed compared to the original Linear Regression Comparison Repo. Perhaps I have not quite gotten the hang of wording my prompts correctly, but that goes to show how A. there IS a learning curve and B. automative processes as they are cannot replace people, they can only help make their jobs easier. To exactly what extent of time-saving measures automation provides should be studied and measured further if a company is thinking of downsizing. From my experience here, downsizing may be possible, but not by an incredible amount.
